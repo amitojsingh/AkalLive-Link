@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>App Redirect</title>
+  <script>
+    window.onload = function () {
+      var userAgent = navigator.userAgent.toLowerCase();
+
+      // Check if Android
+      if (userAgent.indexOf("android") > -1) {
+        window.location.href = "https://play.google.com/store/apps/details?id=com.akallive&pcampaignid=web_share";
+      }
+      // Check if iOS (iPhone, iPad, or iPod)
+      else if (/iphone|ipad|ipod/.test(userAgent)) {
+        window.location.href = "https://apps.apple.com/in/app/akal-live/id555880372";
+      } 
+      // If neither, do nothing or provide alternate behavior
+      else {
+        // No redirect: e.g., show a default page or a "Download our app" prompt
+        console.log("Neither Android nor iOS detected.");
+      }
+    };
+  </script>
+</head>
+<body>
+  <p>Redirecting if on Android or iOS…</p>
+  <!-- You could provide fallback content here for non-mobile users -->
+</body>
+</html>
